@@ -1,0 +1,31 @@
+{
+  "name": "mern-ecom",
+  "version": "1.0.0",
+  "description": "MERN shopping cart app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail -n \"BACKEND,FRONTEND\" \"npm run server\" \"npm run client\"",
+    "server": "nodemon backend/server",
+    "client": "wait-on tcp:5000 && npm start --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/undefinedroot/x0-ecom.git"
+  },
+  "author": "undefinedroot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/undefinedroot/x0-ecom/issues"
+  },
+  "homepage": "https://github.com/undefinedroot/x0-ecom#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.5",
+    "wait-on": "^5.2.0"
+  }
+}
