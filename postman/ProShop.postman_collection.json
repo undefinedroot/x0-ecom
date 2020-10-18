@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "f959eda7-7578-4116-ba25-1499095f8712",
+		"name": "ProShop",
+		"description": "ProShop shopping cart API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GET /api/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "Get all products"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/5f8a6d584628ac0ed4992208",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5f8a6d584628ac0ed4992208"
+							]
+						},
+						"description": "Get single product by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "All routes that have to do with products",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
