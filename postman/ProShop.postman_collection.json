@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f959eda7-7578-4116-ba25-1499095f8712",
+		"_postman_id": "8ec916d6-98af-4ab3-ab94-074403bd1753",
 		"name": "ProShop",
 		"description": "ProShop shopping cart API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -50,6 +50,119 @@
 				}
 			],
 			"description": "All routes that have to do with products",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users & Auth",
+			"item": [
+				{
+					"name": "POST /api/users/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1a8684b1-902e-4660-a879-35d0fae41394",
+								"exec": [
+									"pm.environment.set('TOKEN', pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test1@e.com\",\r\n    \"password\": \"111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "Authenticate user and get token"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "Return logged in user"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test1\",\r\n    \"email\": \"test1@e.com\",\r\n    \"password\": \"111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Create new user"
+					},
+					"response": []
+				}
+			],
+			"description": "Routes that have to do with managing users and authentication",
 			"protocolProfileBehavior": {}
 		}
 	],
