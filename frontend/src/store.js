@@ -15,12 +15,17 @@ import {
   userLoginReducer as userLogin
 } from './reducers/userReducers'
 
+import {
+  userRegisterReducer as userRegister
+} from './reducers/userReducers'
+
 const reducer = combineReducers(
   {
     productList,
     productDetails,
     cart,
-    userLogin
+    userLogin,
+    userRegister
   }
 )
 
