@@ -74,7 +74,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"test1@e.com\",\r\n    \"password\": \"111111\"\r\n}",
+							"raw": "{\r\n    \"email\": \"t@t.com\",\r\n    \"password\": \"111111\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -158,6 +158,45 @@
 							]
 						},
 						"description": "Create new user"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/users/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Updated\",\r\n    \"email\": \"t@t.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "Update user profile"
 					},
 					"response": []
 				}
