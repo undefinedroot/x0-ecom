@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 
-const Footer = () => {
-  return (
+const Footer = () =>
+  (
     <footer>
       <Container>
         <Row>
@@ -10,6 +10,5 @@ const Footer = () => {
       </Container>
     </footer>
   )
-}
 
 export default Footer

@@ -7,7 +7,6 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { listProductDetails } from '../actions/productActions'
 
-
 // props.match.params.id; /products/:id
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1)
@@ -20,7 +19,6 @@ const ProductScreen = ({ history, match }) => {
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
-
   }, [dispatch, match])
 
   const addToCartHandler = () => {
