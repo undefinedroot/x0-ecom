@@ -31,13 +31,13 @@ const ShippingScreen = ({ history }) => {
   }
 
   return <FormContainer>
-    <CheckoutSteps step1 step2></CheckoutSteps>
+    <CheckoutSteps step1 step2 />
     <h1>Shipping</h1>
     <Form onSubmit={submitHandler}>
       <Form.Group controlId='address'>
         <Form.Label>Address</Form.Label>
         <Form.Control
-          type='email'
+          type='text'
           placeholder='Enter Address'
           value={address}
           required
@@ -71,7 +71,7 @@ const ShippingScreen = ({ history }) => {
           onChange={(e) => setCountry(e.target.value)} />
       </Form.Group>
       <Button type='submit' variant='primary'>
-        Countinue
+        Continue
       </Button>
     </Form>
   </FormContainer>
