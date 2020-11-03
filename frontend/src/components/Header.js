@@ -10,7 +10,6 @@ const Header = ({history}) => {
 
   const logoutHandler = () => {
     dispatch(logout())
-    // TODO: redirect to login after logout
   }
 
   return (

@@ -74,7 +74,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"t@t.com\",\r\n    \"password\": \"111111\"\r\n}",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"111111\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -202,6 +202,43 @@
 				}
 			],
 			"description": "Routes that have to do with managing users and authentication",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "GET /api/orders/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders/5fa123ab79365f174cf73af9",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"5fa123ab79365f174cf73af9"
+							]
+						},
+						"description": "Get an order by id"
+					},
+					"response": []
+				}
+			],
+			"description": "Routes that have to do with orders",
 			"protocolProfileBehavior": {}
 		}
 	],
