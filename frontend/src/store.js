@@ -18,6 +18,10 @@ import {
   userUpdateProfileReducer as userUpdateProfile
 } from './reducers/userReducers'
 
+import {
+  orderCreateReducer as orderCreate
+} from './reducers/orderReducers'
+
 const reducer = combineReducers(
   {
     productList,
@@ -26,7 +30,8 @@ const reducer = combineReducers(
     userLogin,
     userRegister,
     userDetails,
-    userUpdateProfile
+    userUpdateProfile,
+    orderCreate
   }
 )
 

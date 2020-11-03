@@ -3,13 +3,14 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { logout } from '../actions/userActions'
 
-const Header = () => {
+const Header = ({history}) => {
   const dispatch = useDispatch()
 
   const { userInfo } = useSelector(state => state.userLogin)
 
   const logoutHandler = () => {
     dispatch(logout())
+    // TODO: redirect to login after logout
   }
 
   return (
