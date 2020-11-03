@@ -119,6 +119,12 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
 
     dispatch({ type: USER_UPDATE_PROFILE_SUCCESS, payload: data })
 
+    const { name, email, token } = data
+
+    dispatch({ type: USER_LOGIN_SUCCESS, payload: { ...getState().userLogin.userInfo, name, email, token }})
+
+    dispatch({ type: USER_DETAILS_SUCCESS, payload: { ...getState().userUpdateProfile.userInfo, name, email, token }})
+
   } catch (error) {
     dispatch({
       type: USER_UPDATE_PROFILE_FAIL,
