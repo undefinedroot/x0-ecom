@@ -1,0 +1,4 @@
+https://www.paypal.com/signin/client?flow=provisionUser&country.x=US&locale.x=en_US
+
+if using NPM 7;
+>> npm i react-paypal-button-v2 --legacy-peer-deps
