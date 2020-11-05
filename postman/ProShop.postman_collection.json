@@ -199,6 +199,35 @@
 						"description": "Update user profile"
 					},
 					"response": []
+				},
+				{
+					"name": "GET /api/users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Get all users, Admin only"
+					},
+					"response": []
 				}
 			],
 			"description": "Routes that have to do with managing users and authentication",
