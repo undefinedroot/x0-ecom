@@ -28,7 +28,6 @@ const protect = asyncHandler(async (req, res, next) => {
 
   if (authorization && authorization.startsWith('Bearer')) {
     try {
-      console.log('hit on login')
       token = authorization.split(' ')[1]
 
       const decoded = jwt.verify(token, process.env.JWT_SECRET)

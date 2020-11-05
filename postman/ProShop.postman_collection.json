@@ -140,7 +140,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Test1\",\r\n    \"email\": \"test1@e.com\",\r\n    \"password\": \"111111\"\r\n}",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"email\": \"test@e.com\",\r\n    \"password\": \"111111\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -226,6 +226,36 @@
 							]
 						},
 						"description": "Get all users, Admin only"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/users/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users/5f9c9fd6059aa10480e52cc7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"5f9c9fd6059aa10480e52cc7"
+							]
+						},
+						"description": "Delete a user. Admin only."
 					},
 					"response": []
 				}
