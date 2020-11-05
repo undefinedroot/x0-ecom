@@ -223,17 +223,47 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/api/orders/5fa123ab79365f174cf73af9",
+							"raw": "{{URL}}/api/orders/5fa1284eb36cbe1ac4f0cac0",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"api",
 								"orders",
-								"5fa123ab79365f174cf73af9"
+								"5fa1284eb36cbe1ac4f0cac0"
 							]
 						},
 						"description": "Get an order by id"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/orders/myorders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders/myorders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"myorders"
+							]
+						},
+						"description": "Get my orders"
 					},
 					"response": []
 				}

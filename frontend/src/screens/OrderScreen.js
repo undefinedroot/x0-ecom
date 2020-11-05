@@ -46,6 +46,8 @@ const OrderScreen = ({match}) => {
     if (!order || successPay) {
       dispatch({ type: ORDER_PAY_RESET })
       dispatch(getOrderDetails(orderId))
+    } else if (order._id !== orderId) {
+      dispatch(getOrderDetails(orderId))
     } else if (!order.isPaid) {
       if (!window.paypal) {
         addPayPalScript()
@@ -53,10 +55,10 @@ const OrderScreen = ({match}) => {
         setSdkReady(true)
       }
     }
+
   }, [dispatch, orderId, successPay, order])
 
   const successPaymentHandler = (paymentResult) => {
-    // console.log(paymentResult)
     dispatch(payOrder(orderId, paymentResult))
   }
 
