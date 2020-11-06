@@ -47,6 +47,104 @@
 						"description": "Get single product by ID"
 					},
 					"response": []
+				},
+				{
+					"name": "DELETE /api/products/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/5fa47e8849c53a0d74fb84e9",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5fa47e8849c53a0d74fb84e9"
+							]
+						},
+						"description": "Delete product. Admin only"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "Add new sample product. Admin Only."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/products/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Product New\",\r\n    \"description\": \"New Description Test 2\",\r\n    \"price\": 777,\r\n    \"category\": \"Electronics\",\r\n    \"countInStock\": 2,\r\n    \"brand\": \"DoNotForgetMe\",\r\n    \"image\": \"/images/sample.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/5fa4e9d4be58cb1aa0ea5636",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5fa4e9d4be58cb1aa0ea5636"
+							]
+						},
+						"description": "Update a product. Admin Only."
+					},
+					"response": []
 				}
 			],
 			"description": "All routes that have to do with products",
@@ -256,6 +354,75 @@
 							]
 						},
 						"description": "Delete a user. Admin only."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users/5fa47e8849c53a0d74fb84e7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"5fa47e8849c53a0d74fb84e7"
+							]
+						},
+						"description": "Get user by ID. Admin Only."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/users/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jane Do\",\r\n    \"isAdmin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/5fa47e8849c53a0d74fb84e7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"5fa47e8849c53a0d74fb84e7"
+							]
+						},
+						"description": "Update a user by ID. Admin only"
 					},
 					"response": []
 				}
