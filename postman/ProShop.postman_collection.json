@@ -145,6 +145,46 @@
 						"description": "Update a product. Admin Only."
 					},
 					"response": []
+				},
+				{
+					"name": "POST /api/products/:id/reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 3,\r\n    \"comment\": \"test comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/5fa5e4b19253771ac41afe57/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5fa5e4b19253771ac41afe57",
+								"reviews"
+							]
+						},
+						"description": "Add new product review"
+					},
+					"response": []
 				}
 			],
 			"description": "All routes that have to do with products",
